@@ -21,10 +21,10 @@ jobs:
         with:
           distribution: temurin
           java-version: 21
-          cache: maven
+          cache: gradle
 
-      - name: Build with Maven
-        run: mvn clean package -DskipTests
+      - name: Build with Gradle
+        run: ./gradlew clean build
 
       - name: Building Docker image
         run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }} .
