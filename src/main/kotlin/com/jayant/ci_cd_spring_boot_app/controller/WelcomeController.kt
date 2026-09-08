@@ -12,6 +12,8 @@ class WelcomeController {
     @GetMapping
     fun welcome(): ResponseEntity<String> = ResponseEntity.ok("Welcome!")
 
-    @GetMapping("/users")
-    fun getUsers(): ResponseEntity<Map<String, Object>> = ResponseEntity.ok(Map.of( "name" ,"Omegamindsoftwares","Live" ,"true"))
+   @GetMapping("/users")
+   fun getUsers(): ResponseEntity<Map<String, Any>> =
+        ResponseEntity.ok(mapOf("name" to "Omegamindsoftwares", "live" to true))
+
 }
